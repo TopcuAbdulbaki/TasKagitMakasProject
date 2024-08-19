@@ -27,12 +27,12 @@ def tekrar_sorgusu():
         computer_point = 0
         tekrar = 1
     else:
-        print("Taraaflardan en az biri istemediğinden program sonlandırılıyor.")
+        print("Taraflardan en az biri istemediginden program sonlandiriliyor.")
     
     return tekrar
 
 
-def tas_kagit_makas_ABDULBAKİ_TOPCU():
+def tas_kagit_makas_ABDULBAKI_TOPCU():
     
     global player_point
     global computer_point
@@ -41,10 +41,10 @@ def tas_kagit_makas_ABDULBAKİ_TOPCU():
     choices=["tas","kagit","makas"]
     print(str(game)+".oyun "+str(tour) + ".tur ")
 
-    player=input("Lütfen seçiminizi yapınız (tas-kagit-makas):").lower().strip()
+    player=input("Lutfen seciminizi yapiniz (tas-kagit-makas):").lower().strip()
     while player not in choices:
-        print("Dikkat! Doğru şekilde yazdiğinizdan emin olun.")
-        player = input("Lütfen seçiminizi yapınız (tas-kagit-makas):").lower().strip()
+        print("Dikkat! Dogru sekilde yazdiginizdan emin olun.")
+        player = input("Lutfen seciminizi yapınız (tas-kagit-makas):").lower().strip()
     
         
     print(f"\n(Oyuncu){player.capitalize()}.")
@@ -53,14 +53,14 @@ def tas_kagit_makas_ABDULBAKİ_TOPCU():
     
     if player == "tas" and computer == "makas" or player == "makas" and computer == "kagit" or player == "kagit" and computer == "tas":  
         player_point += 1
-        print(f"Oyuncu puan kazandı. Mevcut durum-> Oyuncu:{player_point} Bilgisayar:{computer_point}\n")
+        print(f"Oyuncu puan kazandi. Mevcut durum-> Oyuncu:{player_point} Bilgisayar:{computer_point}\n")
     
     elif computer == "tas" and player == "makas" or computer == "makas" and player == "kagit" or computer == "kagit" and player == "tas":
         computer_point += 1
-        print(f"Bilgisayar puan kazandı. Mevcut durum-> Bilgisayar:{computer_point} Oyuncu:{player_point}\n")
+        print(f"Bilgisayar puan kazandi. Mevcut durum-> Bilgisayar:{computer_point} Oyuncu:{player_point}\n")
     
     else:
-        print("Beraberlik. Bu turun kazananı yok.\n")
+        print("Beraberlik. Bu turun kazanani yok.\n")
     
     tour += 1
      
@@ -74,34 +74,34 @@ computer_point = 0
 playerGamePoint = 0
 computerGamePoint = 0
 
-print("""TAŞ KAĞIT MAKAS'A HOŞ GELDİNİZ!
+print("""TAS KAGIT MAKAS'A HOS GELDINIZ!
       
 Kurallar:
-          1- Taş Makası kırar.
-          2- Makas Kağıtı keser.
-          3- Kağıt Taşı sarar.
-          4- İki tarafın da aynı şeyi oynaması halinde durum değişmez.
-          5- Her oyunda ilk iki turu kazanan oyunu da kazanır.
-          6- Seçim yapılırken 'tas-kagit-makas' şekilende yazılmalıdır.
-          7- Oyun sonunda devam edip etmek istemediğiniz sorulacaktır. 
-             Karşılaşmaya devam etmek istediğinizi belirtmek için 'y',
-             karşılaşmayı bitirmek için 'n' yazınız.\n\n""")
+          1- Tas Makasi kirar.
+          2- Makas Kagiti keser.
+          3- Kagit Tasi sarar.
+          4- Iki tarafin da ayni seyi oynamasi halinde durum degismez.
+          5- Her oyunda ilk iki turu kazanan oyunu da kazanir.
+          6- Secim yapilirken 'tas-kagit-makas' sekilende yazilmalidir.
+          7- Oyun sonunda devam edip etmek istemediginiz sorulacaktır. 
+             Karsilasmaya devam etmek istediginizi belirtmek icin 'y',
+             karsilasmayi bitirmek icin 'n' yaziniz.\n\n""")
 
 
 while player_point < 2 or computer_point < 2:
     
-    tas_kagit_makas_ABDULBAKİ_TOPCU()
+    tas_kagit_makas_ABDULBAKI_TOPCU()
     
     if player_point > 1:
         playerGamePoint += 1
-        print(f"OYUN BİTTİ.OYUNCU KAZANDI.TEBRİKLER!\nGENEL SONUÇ --> OYUNUCU:{playerGamePoint} BİLGİSAYAR:{computerGamePoint}".upper())
+        print(f"OYUN BITTI. OYUNCU KAZANDI. TEBRIKLER!\nGENEL SONUC --> OYUNUCU:{playerGamePoint} BILGISAYAR:{computerGamePoint}".upper())
         
         if tekrar_sorgusu() == 0:
             break
             
     elif computer_point > 1:
         computerGamePoint += 1
-        print(f"OYUN BİTTİ.BİLGİSAYAR KAZANDI.TEBRİKLER!\nGENEL SONUÇ --> OYUNCU:{playerGamePoint} BİLGİSAYAR:{computerGamePoint}".upper())
+        print(f"OYUN BITTI. BILGISAYAR KAZANDI.TEBRIKLER!\nGENEL SONUÇ --> OYUNCU:{playerGamePoint} BILGISAYAR:{computerGamePoint}".upper())
         if tekrar_sorgusu() == 0:
             break
     
